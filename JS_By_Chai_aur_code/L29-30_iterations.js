@@ -56,26 +56,56 @@ let myObject = {
 //   console.log(element)
 // });
 
-skills.forEach((element) => {
-  console.log(element)
-});
+// skills.forEach((element) => {
+//   console.log(element)
+// });
 
 // myMap.forEach(keyValue => {
 //   console.log(keyValue);
 // })
 
 
+/* =======================LECTURE 30================================ */
+
+ /*
+ We can't return value in for each loop, so we use filter
+ */
+
+// let value[] = skills.forEach((skill, a, b) => {
+//   console.log(b)
+//   return skill; //will give undefined as output
+// })
+// console.log(value);
+
+
+/* ++++++++++++++++++++++++"Filter"+++++++++++++++++++++++++ */
+
+
+// let skillSet = skills.filter((arrayItems) => {
+//   console.log(arrayItems)
+//   return arrayItems;
+// })
+// console.log(skillSet);
+
+//let skillSet = skills.filter((arrayItems) => arrayItems) //no need to write  return keyword if scope braces are not ther
+//console.log(skillSet);
+
+//let myNumArray = [2, 3, 4, 5, 8];
+//let returnedItems = myNumArray.filter((arrayItems) => arrayItems < 4) // will filter and return values less than 4
+//console.log(returnedItems) 
 
 
 
 
 
-/* ------------------------Notes------------------------- */
+
+/* ------------------------NOTES------------------------- */
 
 /*  
 1) Use for of loop with map, array, and string.
 2) Use for in loop with objects
-3)
+3) If you want to return a value use filter instead of for each
+4) Value can be returned using map function as well but filtering is not possible, for e.g. line no 94 arrayItrms < 4
 
 */
 
