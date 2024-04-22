@@ -2,7 +2,7 @@ let myMap = new Map();
 myMap.set('Name', 'Atul')
 myMap.set('city', 'Bangalore')
 myMap.set('pin', 560055)
-myMap.set('myPin', 560054) //duplicate key are not allowed, value can be duplicate
+myMap.set('myPin', 560054) //duplicate keys are not allowed, value can be duplicate
 
 /*  for of with map */
 // console.log(myMap)
@@ -16,24 +16,24 @@ myMap.set('myPin', 560054) //duplicate key are not allowed, value can be duplica
 // }
 
 /* for of with string */
-let myString = "Gprakhpur";
+//let myString = "Gorakhpur";
 
 // for (let letters of myCity){
 //   console.log(letters);
 // }
 
 /*for of with array */
-let skills = ["js", "react", "node", "restAPI", 2024];
+// let skills = ["js", "react", "node", "restAPI", 2024];
 // for (let skill of skills){
 //   console.log(`${skill}`)
 // }
 
 /* for of with object */
-let myObject = {
-  'movie': "Hobbit",
-  'year' : "2020",
-  "language": "English"
-}
+// let myObject = {
+//   'movie': "Hobbit",
+//   'year' : "2020",
+//   "language": "English"
+// }
 
 // "for of" doesn't work with objects
 // for (let movieDetails of movieObj){
@@ -49,6 +49,7 @@ let myObject = {
 // for (let skill in skills){
 //   console.log(`${skill}`)
 // }
+
 
 /* ++++++++++++++++++++++++"FOR EACH LOOP"+++++++++++++++++++++++++ */
 
@@ -71,6 +72,7 @@ let myObject = {
  We can't return value in for each loop, so we use filter
  */
 
+// let skills = ["js", "react", "node", "restAPI", 2024];
 // let value[] = skills.forEach((skill, a, b) => {
 //   console.log(b)
 //   return skill; //will give undefined as output
@@ -80,12 +82,13 @@ let myObject = {
 
 /* ++++++++++++++++++++++++"Filter"+++++++++++++++++++++++++ */
 
-
+// let skills = ["js", "react", "node", "restAPI", 2024];
 // let skillSet = skills.filter((arrayItems) => {
 //   console.log(arrayItems)
 //   return arrayItems;
 // })
 // console.log(skillSet);
+
 
 //let skillSet = skills.filter((arrayItems) => arrayItems) //no need to write  return keyword if scope braces are not ther
 //console.log(skillSet);
@@ -93,6 +96,16 @@ let myObject = {
 //let myNumArray = [2, 3, 4, 5, 8];
 //let returnedItems = myNumArray.filter((arrayItems) => arrayItems < 4) // will filter and return values less than 4
 //console.log(returnedItems) 
+
+
+/* ++++++++++++++++++++++++"Map"+++++++++++++++++++++++++ */
+
+// let myNums = [2, 2, 4, 5, 8];
+// let newNums = myNums.map((num) => {
+//   return num+2;
+// })
+// console.log(newNums);
+// console.log(typeof newNums);
 
 
 
