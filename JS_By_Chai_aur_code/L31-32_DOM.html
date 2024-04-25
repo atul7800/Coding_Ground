@@ -1,0 +1,60 @@
+ <!--
+window > Document
+
+1) document.getElementById
+    Eg- document.getElementById("#heading_two").style.color = "blue";
+
+2) document.getElementsByClassName
+3) document.getElementByName
+4) document.querySelectorAll
+    >> Returns a NodeList
+    >> Eg- let allH2 = document.querySelector('h2') | will return a NodeList conataining all h2 elements on th page.
+    >> allH2.style.color = "blue"; | will not work allH2 is a NodeList not a signle element
+    >> allH2[0].style.color = "blue"; 
+        O/P- font color of the 1st h2 will become blue
+    >> Eg- allH2.forEach((hTwo) => {
+        hTwo.innerText = "I am h2!";
+    })
+
+5) document.querySelector
+    >> Returns the first element
+    >> Eg- document.querySelector('h2') | will return the first h2 elements on th page.
+
+6) innerHTML
+    <p id="hello">Hello JS <span>language</span></p>
+    >> Eg- let element = document.querySelector('#hello').innerHTML;
+        >>Console.log(element);
+            O/P - Hello JS <span>language</span>
+
+7) innerText
+    <p id="hello">Hello JS <span style="display:none;">language</span></p>
+    >> Eg- let element = document.querySelector('#hello').innerText;
+        >>Console.log(element);
+            O/P - Hello JS
+
+8) textContent
+    <p id="hello">Hello JS <span style="display:none;">language</span></p>
+    >> Eg- let element = document.querySelector('#hello').textContent;
+        >>Console.log(element);
+            O/P - Hello JS language
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <h2 class="hTwo">Lorem ipsum dolor sit.</h2>
+    <h2 class="hTwo">Lorem ipsum dolor sit amet.</h2>
+    <h2 class="hTwo">Lorem, ipsum dolor.</h2>
+ </body>
+
+ <script>
+    let allH2 = document.getElementsByClassName("hTwo");
+    allH2[0].style.color = "white";
+ </script>
+ </html>
+
