@@ -35,33 +35,38 @@
     // console.log(parent.children);   //will return HTMLCollection
     // console.log(parent.children[2].innerText); //will return Wednesday
 
-    // for (let index = 0; index < parent.children.length; index++) {
-    //     console.log(parent.children[index].innerHTML);
+    /* for (let index = 0; index < parent.children.length; index++) {
+         console.log(parent.children[index].innerHTML);
         
-    // }
+    } */
 
     //console.log(parentOne.firstElementChild); //will return the first child of the parent element.
     //console.log(parentOne.lastElementChild); //will return the last child of the parent element.
 
     //let child = document.querySelector(".day"); //will return the first element found with class 'day' 
+
     // console.log(child.parentElement); //will retun immediate parent of the child element
+
     // console.log(child.removeAttribute('aria-hidden')) //will remove the attribute 
+
     //console.log(child.remove()) //will remove the child from DOM structure
+
     // console.log(child.nextSibling); 
 
     //let ulChild = document.querySelector(".firstChild"); 
     //console.log(ulChild.nextSibling); //will return first immediate sibling element (if any space is there between two sibling elements nextSibling will return undefined/#text)
+
     //console.log(ulChild.nextElementSibling) //will return the first immediate sibling element which is li.secondChild
 
     //console.log('Nodes : ', parentOne.childNodes) // will show all the node. Remember in DOM even a line break or space is considered as a node
 
 
-    /*++++++++++++++++++++++++++++++CREATING NEW ELEMENT IN DOM++++++++++++++++++++++++++++++++*/
+    /*+++++++++++++CREATING NEW ELEMENT IN DOM+++++++++++*/
     
     let newDiv = document.createElement('div');
     console.log(newDiv);
     newDiv.className = 'myDiv';
-    newDiv.id = Math.round(Math.random() * 10 + 1);
+    newDiv.id = Math.round(Math.random() * 10 + 1); //generating random ID
     newDiv.style.padding = "10px";
     newDiv.style.paddingLeft = "50px";
     newDiv.style.backgroundColor = "blue";
