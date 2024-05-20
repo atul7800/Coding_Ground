@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <input type="button" value="Click me" id="btn">
+</body>
+    <script>
+        let clickBtn = document.getElementById('btn');
+        clickBtn.addEventListener('keydown', (event)=>{
+            console.log("event: ",event);
+            console.log("type: ",event.type);
+            console.log("timeStamp: ", event.timeStamp);
+            console.log("defaultPrevented: ",event.defaultPrevented);
+            console.log("target: ",event.target);
+            console.log("srcElement: ",event.srcElement);
+            console.log("currentTarget: ",event.currentTarget);
+            console.log("clientX: ",event.clientX);
+            console.log("clientY: ",event.clientY);
+            console.log("screenX: ",event.screenX);
+            console.log("screenY: ",event.screenY);
+            console.log("altKey: ", event.altKey);
+            console.log("ctrlKey: ", event.ctrlKey);
+            console.log("shiftKey: ", event.shiftKey);
+        })
+    </script>
+</html>
