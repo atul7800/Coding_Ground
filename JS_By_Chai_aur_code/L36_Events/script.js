@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events</title>
-</head>
-<body>
-    <input type="button" value="Click me" id="btn">
-</body>
-    <script>
-        let clickBtn = document.getElementById('btn');
+/* 
+let clickBtn = document.getElementById('btn');
         clickBtn.addEventListener('keydown', (event)=>{
             console.log("event: ",event);
             console.log("type: ",event.type);
@@ -25,6 +15,38 @@
             console.log("altKey: ", event.altKey);
             console.log("ctrlKey: ", event.ctrlKey);
             console.log("shiftKey: ", event.shiftKey);
-        })
-    </script>
-</html>
+        }, false)
+
+https://www.w3schools.com/jsref/dom_obj_event_prop.asp 
+*/
+
+window.addEventListener(
+    "load",
+    () => {
+      console.log("Page fully loaded.");
+    },
+    false
+  );
+
+  window.addEventListener(
+    "resize",
+    function () {
+      console.log("Window resized");
+    },
+    false
+  );
+
+  document.getElementById("btn").addEventListener(
+    "click",
+    function showOutput() {
+      console.log("Form submitted");
+    },
+    false
+  );
+
+  document.addEventListener("keydown", (event) => {
+    console.log(`${event.keydown} pressed.`);
+  });
+
+  
+
