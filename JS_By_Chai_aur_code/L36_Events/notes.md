@@ -3,6 +3,7 @@
 1. [Handeling events](https://eloquentjavascript.net/15_event.html)
 2. [Event handeling by Scaler](https://www.scaler.com/topics/javascript/event-handling-in-javascript/)
 3. [HTML event properties](https://www.w3schools.com/jsref/dom_obj_event_prop.asp)
+4. [Introduction to Events](https://javascript.info/events)
 
 # Events
 

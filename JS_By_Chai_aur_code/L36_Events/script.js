@@ -20,6 +20,8 @@ let clickBtn = document.getElementById('btn');
 https://www.w3schools.com/jsref/dom_obj_event_prop.asp 
 */
 
+/*
+//Broswer events
 window.addEventListener(
     "load",
     () => {
@@ -36,6 +38,7 @@ window.addEventListener(
     false
   );
 
+  //User events
   document.getElementById("btn").addEventListener(
     "click",
     function showOutput() {
@@ -47,6 +50,11 @@ window.addEventListener(
   document.addEventListener("keydown", (event) => {
     console.log(`${event.keydown} pressed.`);
   });
+*/
 
+// let divParent = document.querySelector('.parentCls');
+// divParent.addEventListener('click', ()=>{
+//   console.log('Parent div clicked');
+// }, true);
   
 

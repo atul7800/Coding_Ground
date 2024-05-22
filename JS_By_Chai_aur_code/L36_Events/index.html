@@ -4,9 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
+    <style>
+       
+        div{
+            border: 2px solid black;
+            min-width: 100px;
+            min-height: 100px;
+            padding: 50px;
+        }
+    </style>
 </head>
 <body>
-    <input type="button" value="Click me" id="btn">
+    <div class="grandParent">Grandparent
+        <div class="parent">Parent
+            <div class="child">Child
+                <div class="childsChild">
+                    Child's child
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-    <script src="script.js"></script>
+    <script>
+        let grandParent = document.querySelector('.grandParent');
+        let parent = document.querySelector('.parent');
+        let child = document.querySelector('.child');
+        let childsChild = document.querySelector('.childsChild');
+        
+        grandParent.addEventListener('dblclick', ()=>{
+            console.log('Grandparent called.');
+        }, false);
+
+        parent.addEventListener('click', ()=>{
+            console.log('Parent called.');
+        }, false);
+
+        child.addEventListener('click', ()=>{
+            console.log('Child called.');
+        }, false);
+
+        childsChild.addEventListener('click', ()=>{
+            console.log('Childs child called.');
+        }, false);
+
+    </script>
+    <!-- <script src="script.js"></script> -->
 </html>
