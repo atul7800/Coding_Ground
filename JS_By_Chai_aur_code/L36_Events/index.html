@@ -31,9 +31,9 @@
         let child = document.querySelector('.child');
         let childsChild = document.querySelector('.childsChild');
         
-        grandParent.addEventListener('dblclick', ()=>{
+        grandParent.addEventListener('click', ()=>{
             console.log('Grandparent called.');
-        }, false);
+        }, true);
 
         parent.addEventListener('click', ()=>{
             console.log('Parent called.');
@@ -43,8 +43,9 @@
             console.log('Child called.');
         }, false);
 
-        childsChild.addEventListener('click', ()=>{
+        childsChild.addEventListener('click', (e)=>{
             console.log('Childs child called.');
+            e.preventDefault();
         }, false);
 
     </script>

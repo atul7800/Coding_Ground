@@ -3,7 +3,7 @@
 1. [Handeling events](https://eloquentjavascript.net/15_event.html)
 2. [Event handeling by Scaler](https://www.scaler.com/topics/javascript/event-handling-in-javascript/)
 3. [HTML event properties](https://www.w3schools.com/jsref/dom_obj_event_prop.asp)
-4. [Introduction to Events](https://javascript.info/events)
+4. [Explanation of event propagation](https://www.freecodecamp.org/news/a-simplified-explanation-of-event-propagation-in-javascript-f9de7961a06e/)
 
 # Events
 
@@ -59,5 +59,91 @@ The browser notifies the system that something has happened. It can be handled b
    ```
 
 ## Event propagation
+Event propagation is a way to describe the “stack” of events that are fired in a web browser.
 
-An event handler registered on an element with child elements inside will
+There are two ways to handle event propagation:
+1. Bubbling
+2. Capturing (also called trickling)
+
+### Bubbling
+```js
+grandParent.addEventListener('click', ()=>{
+    console.log('Grandparent called.');
+}, false);
+
+parent.addEventListener('click', ()=>{
+    console.log('Parent called.');
+}, false);
+
+child.addEventListener('click', ()=>{
+    console.log('Child called.');
+}, false);
+
+childsChild.addEventListener('click', ()=>{
+    console.log('Childs child called.');
+}, false);
+```
+__Output:__
+```
+Childs child called.
+Child called.
+Parent called.
+Grandparent called.
+```
+
+### Capturing/Trickling
+```js
+grandParent.addEventListener('click', ()=>{
+    console.log('Grandparent called.');
+}, true);
+
+parent.addEventListener('click', ()=>{
+    console.log('Parent called.');
+}, true);
+
+child.addEventListener('click', ()=>{
+    console.log('Child called.');
+}, true);
+
+childsChild.addEventListener('click', ()=>{
+    console.log('Childs child called.');
+}, true);
+```
+__Output:__
+```
+Grandparent called.
+Parent called.
+Child called.
+Childs child called.
+```
+
+__Notes:__
+1. true - capturing
+2. false - bubbling
+3. If you don't pass any parameter then by default false will be passed
+4. e.stopPropagation() to prevent propagation
+5. e.preventDefault() to prevent default behavour
+6. Capturing is given priority
+       
+__Eg:__
+```js
+grandParent.addEventListener('click', ()=>{
+    console.log('Grandparent called.');
+}, false);
+
+parent.addEventListener('click', ()=>{
+    console.log('Parent called.');
+}, true);
+
+child.addEventListener('click', ()=>{
+    console.log('Child called.');
+}, false);
+```
+__Output:__
+```
+Parent called.
+Child called.
+Grandparent called.
+```
+
+
