@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>two</title>
+    <style>
+        button{
+            min-width: 150px;
+            min-height: 50px;
+            margin: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            border: 2px solid black;
+        }
+
+        html, body{
+            display: flex;
+            align-items: center;
+            height: 100%;
+            flex-direction: row;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let start = document.getElementById('start');
+    let stop = document.getElementById('stop');
+    let body = document.getElementsByTagName('body');
+
+    let hexRange = '0123456789ABCDEF';
+    let randomNumber;
+    let randomColor = '#';
+
+    start.addEventListener('click', function (e){
+        //console.log('Inside start' +  generateRandomColorCode());
+       
+        setInterval(() => {
+            console.log('Inside setInterval');
+            let colorGenerated = generateRandomColorCode();
+            body.style.backgroundColor = colorGenerated;
+            console.log('Random color : ' + generateRandomColorCode());
+            randomColor = '#';
+        }, 2000);
+
+        function generateRandomColorCode(){
+            for(let i=0; i<5; i++){
+                randomNumber = Math.round(Math.random() * 16);
+                randomColor += hexRange[randomNumber];
+            }
+            console.log('Inside generateRandomColorCode : ' + randomColor);
+            return randomColor;
+        }
+    }, false)
+</script>
+</html>
