@@ -23,38 +23,44 @@
         }
     </style>
 </head>
-<body>
+<body id="bodyID">
     <button id="start">Start</button>
     <button id="stop">Stop</button>
 </body>
+
 <script>
     let start = document.getElementById('start');
     let stop = document.getElementById('stop');
-    let body = document.getElementsByTagName('body');
+    let body = document.getElementById('bodyID');
 
     let hexRange = '0123456789ABCDEF';
     let randomNumber;
     let randomColor = '#';
+    let set_Interval;
+    let newColor;
 
-    start.addEventListener('click', function (e){
-        //console.log('Inside start' +  generateRandomColorCode());
-       
-        setInterval(() => {
-            console.log('Inside setInterval');
-            let colorGenerated = generateRandomColorCode();
-            body.style.backgroundColor = colorGenerated;
-            console.log('Random color : ' + generateRandomColorCode());
+   start.addEventListener('click', ()=> {
+        set_Interval = setInterval(() => {
+            newColor = colorCodeGenerator();
+            console.log("Color code: "+newColor);
+            body.style.backgroundColor = newColor;
             randomColor = '#';
-        }, 2000);
+            randomNumber = 0;
+        }, 1300);
+   }, false);
 
-        function generateRandomColorCode(){
-            for(let i=0; i<5; i++){
-                randomNumber = Math.round(Math.random() * 16);
-                randomColor += hexRange[randomNumber];
-            }
-            console.log('Inside generateRandomColorCode : ' + randomColor);
-            return randomColor;
+   stop.addEventListener('click', function (){
+        clearInterval(set_Interval);
+        console.log('Process terminated');
+   }, false);
+    
+
+    function colorCodeGenerator(){
+        for(let i=0; i<6; i++){
+            randomNumber = Math.round(Math.random() * 15);
+            randomColor += hexRange[randomNumber];
         }
-    }, false)
+        return randomColor;
+    }
 </script>
 </html>
