@@ -51,6 +51,7 @@
 
    stop.addEventListener('click', function (){
         clearInterval(set_Interval);
+        set_Interval=null;
         console.log('Process terminated');
    }, false);
     
