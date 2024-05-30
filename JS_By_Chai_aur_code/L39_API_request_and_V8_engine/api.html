@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <style>
+        .mainContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+        }
+        .card{
+            width: 300px;
+            height: 400px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: black;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5),
+            -0px 2px 4px rgba(0, 0, 0, 0.5),
+            0px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h3{
+            text-align: center;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="maiContainer">
+        <div class="card">
+            <h3 class="userName"></h3>
+            <p class="publicRepos">Repos: </p>
+            <p class="followers">Followers: </p>
+            <p class="bio">Bio: </p>
+        </div>
+    </div>
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();
+    let data;
+
+    xhr.open('GET', requestUrl);
+    //by default data received from server is in string format to convert it in object format we use dataType property of XMLHttpRequest
+    //Or we can typecast as well E.g. JSON.parse(xhr.dataText)
+
+    //xhr.responseType = 'json';
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4){
+            data = JSON.parse(xhr.responseText);
+            document.querySelector('.userName').textContent += data.name;
+            document.querySelector('.publicRepos').textContent += data.public_repos;
+            document.querySelector('.followers').textContent += data.followers;
+            document.querySelector('.bio').textContent += data.bio;
+            console.log(data.avatar_url);
+        }
+        
+    }
+    xhr.send();
+
+    </script>
+</html>
