@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const promiseOne = new Promise(function(resolve, reject){
+        const error = true;
+        if(!error){
+            //call resolve if no error
+            resolve('Successfull');
+        } else{
+            reject('Something went wrong')
+        }
+    });
+
+    // promiseOne.then((msg)=>{
+    //     console.log(msg);
+    // }).catch(function(msg){
+    //     console.log(msg);
+    // })
+
+    //Doinf the same thing using async and await instead of then and catch
+    async function consumePromiseOne(){
+        try {
+            let result = await promiseOne;
+            console.log(result);
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    consumePromiseOne();
+    /**/
+
+
+
+</script>
+</html>

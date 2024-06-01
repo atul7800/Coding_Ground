@@ -1,3 +1,7 @@
+[Callback](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
+[Callback function](https://www.geeksforgeeks.org/javascript-callbacks/)
+[Callbacks by geeksforgeeks](https://www.geeksforgeeks.org/javascript-callbacks/)
+
 # Promise
 
 ### <span style="color:orange;">Why do we use callback functions?</span>
