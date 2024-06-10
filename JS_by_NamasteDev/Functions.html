@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //First class function
+    /*The ability to:
+        1) Assign a function to a variable as value
+        2) Pass a function as an argument to another function
+        3) Return a function from another function*/
+    let x = function calculation(){
+        let a = 10;
+        let b = 12;
+
+        function add(){
+            return a+b;
+        }
+
+        function displayResult(param){
+            let result = param();
+            console.log("Result = ", result);
+        }
+
+        return displayResult(add);
+    }
+    x();
+
+    //Function statement/declaration
+    /*Function statement/declaration is nothing but normal way of defining a function*/
+    function xyz(){
+    }
+
+    //Function expression
+    //Assigning a anonymous function in a variable
+    let xz = function (){
+
+    }
+
+    //Named function expression
+    //Assigning a function in a variable
+    let yz = function (){
+
+    }
+
+</script>
+</html>
